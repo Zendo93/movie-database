@@ -1,58 +1,49 @@
+import {
+    AppBar,
+    Button,
+    createStyles,
+    IconButton,
+    makeStyles,
+    Theme,
+    Toolbar,
+    Typography
+} from '@material-ui/core';
+import MenuIcon from '@material-ui/icons/Menu'
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
 import './App.css';
 
+const useStyles = makeStyles((theme: Theme) =>
+    createStyles({
+        root: {
+            flexGrow: 1,
+        },
+        menuButton: {
+            marginRight: theme.spacing(2),
+        },
+        title: {
+            flexGrow: 1,
+        },
+    }),
+);
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
-  );
+    const classes = useStyles();
+
+    return (
+        <AppBar position="static">
+            <Toolbar>
+                <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+                    <MenuIcon/>
+                </IconButton>
+                <Typography variant="h6" className={classes.title}>
+                    Movie Database
+                </Typography>
+                <Button color="inherit">Search</Button>
+                <Button color="inherit">Detail</Button>
+                <Button color="inherit">Favorites</Button>
+            </Toolbar>
+        </AppBar>
+    );
 }
 
 export default App;
