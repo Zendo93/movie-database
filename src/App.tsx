@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from "./Header";
-import {createStyles, makeStyles, TextField, Theme} from "@material-ui/core";
+import {Button, createStyles, makeStyles, TextField, Theme} from "@material-ui/core";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -11,6 +11,9 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         searchInput: {
             width: 500
+        },
+        submitButton: {
+            height: 56
         }
     })
 );
@@ -25,6 +28,7 @@ function App() {
         <Header />
         <form className={classes.form} noValidate autoComplete="off">
             <TextField id="outlined-basic" className={classes.searchInput} label="Search" variant="outlined" />
+            <Button className={classes.submitButton} variant="outlined">Submit</Button>
         </form>
         </>
     );
