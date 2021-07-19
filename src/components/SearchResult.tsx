@@ -8,7 +8,7 @@ import {
     Theme,
     Typography
 } from "@material-ui/core";
-import logo from "./logo.svg";
+import logo from "../logo.svg";
 import React from "react";
 
 const useStyles = makeStyles((theme: Theme) =>
