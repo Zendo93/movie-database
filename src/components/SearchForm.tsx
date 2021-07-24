@@ -27,7 +27,6 @@ function SearchForm() {
     const dispatch: AppDispatch = useAppDispatch();
 
     function handleSearchTermChange(searchTerm: string): void {
-        console.log(searchTerm);
         dispatch(setSearchTerm(searchTerm));
     }
 
